@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -14,6 +15,7 @@ const accentColors: { name: string; value: Accent; className: string }[] = [
   { name: "Emerald", value: "emerald", className: "bg-emerald-600" },
   { name: "Black", value: "black", className: "bg-neutral-900" },
 ];
+
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);

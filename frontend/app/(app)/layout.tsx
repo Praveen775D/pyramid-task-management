@@ -7,7 +7,6 @@ import { AppShell } from "@/components/layout/AppShell";
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [ready, setReady] = useState(false);
-
   useEffect(() => {
     const token = localStorage.getItem("pyramid_token");
     if (!token) {

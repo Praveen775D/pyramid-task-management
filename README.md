@@ -1,90 +1,209 @@
-# Pyramid Task Management Assessment — Final Pro
+# Pyramid Task Management
 
-A polished full-stack task-management implementation inspired by the supplied Pyramid Figma reference.
+A polished full-stack task management application inspired by the supplied Pyramid Figma reference, featuring responsive UI, task workflows, projects, profiles, themes, authentication, and REST APIs.
 
-## Stack
-- Next.js 15 App Router + TypeScript
+## Tech Stack
+
+- Next.js 15
+- TypeScript
 - Tailwind CSS
-- NestJS + TypeScript
-- MongoDB + Mongoose
-- JWT guest authentication
+- NestJS
+- MongoDB
+- Mongoose
+- JWT Authentication
+- REST APIs
+- Render Deployment
 
 ## Features
-- Guest login with JWT
-- Responsive workspace shell and profile menu
+
+- Guest authentication with JWT
+- Responsive dashboard
 - Board and List views
-- Search
-- Fields visibility menu
-- Multi-section filters
-- Add Task modal with validation
-- Drag tasks between status columns
-- Task detail page
-- Editable title, status, priority, member, labels and due date
-- Custom calendar date picker
-- Subtask creation
-- Comments UI
-- Projects and project detail screens
-- Profile editing for name, title and username
-- Light/Dark theme persistence
-- Amber, Blue, Pink, Rose, Emerald and Black accent modes
-- Motion and reduced-motion support
-- NestJS validation and REST APIs
+- Task search and filtering
+- Create, edit, and delete tasks
+- Drag-and-drop task status updates
+- Task details and subtasks
+- Comments interface
+- Projects and project details
+- Profile editing
+- Due-date calendar
+- Light/Dark mode
+- Multiple accent themes
+- Responsive design
+- Backend validation
+- REST API integration
 
-## Run locally
-### 1. MongoDB
-MongoDB may run as a Windows service or via Docker. The backend defaults to:
-`mongodb://127.0.0.1:27017/pyramid_assessment`
+## Project Structure
 
-### 2. Backend
-```powershell
+```text
+pyramid-task-management/
+│
+├── backend/
+│   ├── src/
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── .env.local
+│
+├── .gitignore
+└── README.md
+```
+
+## Local Setup
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Praveen775D/pyramid-task-management.git
+cd pyramid-task-management
+```
+
+### 2. Start Backend
+
+```bash
 cd backend
 npm install
 npm run start:dev
 ```
-Runs on `http://localhost:4000`.
 
-### 3. Frontend
-```powershell
+Backend runs on:
+
+```text
+http://localhost:4000
+```
+
+### 3. Start Frontend
+
+Open another terminal:
+
+```bash
 cd frontend
 npm install
 npm run dev
 ```
-Runs on `http://localhost:3000` by default.
 
-If Next.js selects another port, the NestJS CORS configuration already accepts localhost:3000 and localhost:3001.
+Frontend runs on:
 
-## Environment
-Backend `.env`:
-```env
-PORT=4000
-MONGODB_URI=mongodb://127.0.0.1:27017/pyramid_assessment
-JWT_SECRET=replace-with-a-long-random-secret
-FRONTEND_URL=http://localhost:3000,http://localhost:3001
+```text
+http://localhost:3000
 ```
 
-Frontend `.env.local`:
+## Environment Variables
+
+### Backend `.env`
+
+```env
+PORT=4000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_jwt_secret
+FRONTEND_URL=http://localhost:3000
+```
+
+### Frontend `.env.local`
+
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:4000/api
 ```
 
-## API
-- `POST /api/auth/guest`
-- `GET /api/auth/me`
-- `PATCH /api/auth/profile`
-- `PATCH /api/users/theme`
-- `GET /api/tasks`
-- `POST /api/tasks`
-- `PATCH /api/tasks/:id`
-- `DELETE /api/tasks/:id`
+> Never commit `.env` or `.env.local` files to GitHub.
 
-## Design notes
-The implementation follows the supplied reference screenshots for the compact typography, 256px/240px workspace navigation, 192px profile settings navigation, card/table geometry, popovers, theme controls, and task-detail sidebar. Where browser-native behavior is preferable, a native date input is used in the Add Task dialog while the task-detail screen contains a custom calendar matching the visual reference.
+## API Endpoints
 
-## Assessment submission checklist
-Before submission:
-- Push the project to a public GitHub repository.
-- Use several small, meaningful commits rather than one large commit.
-- Deploy frontend and backend with a reachable MongoDB instance.
-- Verify the live URL in an incognito browser.
-- Add the completed AbleSpace Part 2 document/video and screenshots.
-- Keep the deployment accessible for at least 45 days.
+### Authentication
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/guest` | Guest login |
+| GET | `/api/auth/me` | Get current user |
+| PATCH | `/api/auth/profile` | Update profile |
+
+### Users
+
+| Method | Endpoint | Description |
+|---|---|---|
+| PATCH | `/api/users/theme` | Update user theme |
+
+### Tasks
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/tasks` | Get tasks |
+| POST | `/api/tasks` | Create task |
+| PATCH | `/api/tasks/:id` | Update task |
+| DELETE | `/api/tasks/:id` | Delete task |
+
+## Deployment
+
+The application is deployed using:
+
+- **Frontend:** Render
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+
+### Live Application
+
+**Frontend**
+
+https://pyramid-task-management-2.onrender.com
+
+**Backend**
+
+https://pyramid-task-management-1.onrender.com
+
+## Design
+
+The application follows the supplied Pyramid Figma reference with a focus on:
+
+- Clean workspace navigation
+- Compact typography
+- Responsive layouts
+- Task cards and tables
+- Search and filtering
+- Popovers and dialogs
+- Task detail sidebar
+- Theme customization
+- Mobile-friendly interactions
+
+## Git Workflow
+
+The project was developed using meaningful commits covering:
+
+- Project initialization
+- Frontend implementation
+- Backend implementation
+- MongoDB integration
+- Authentication
+- Task management
+- Projects and profiles
+- Theme customization
+- Validation and UI improvements
+- Deployment configuration
+- Documentation
+
+## Assessment
+
+This project demonstrates full-stack development skills including:
+
+- Frontend development with Next.js and TypeScript
+- Responsive UI implementation
+- Backend development with NestJS
+- REST API development
+- MongoDB database integration
+- JWT authentication
+- Form validation
+- State management
+- Deployment and environment configuration
+
+## Repository
+
+GitHub:
+
+https://github.com/Praveen775D/pyramid-task-management
+
+## License
+
+This project was created for assessment and demonstration purposes.
